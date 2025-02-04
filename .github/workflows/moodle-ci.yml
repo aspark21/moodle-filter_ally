@@ -8,19 +8,12 @@ on:
         type: choice
         description: Select Moodle branch
         options:
-        - 'MOODLE_400_STABLE'
-        - 'MOODLE_401_STABLE'
-        - 'MOODLE_402_STABLE'
-        - 'MOODLE_403_STABLE'
-        - 'MOODLE_404_STABLE'
         - 'MOODLE_405_STABLE'
-        default: 'MOODLE_404_STABLE'
+        default: 'MOODLE_405_STABLE'
       phpversion:
         type: choice
         description: Select PHP version
         options:
-        - '7.4'
-        - '8.0'
         - '8.1'
         - '8.2'
         default: '8.1'
@@ -31,7 +24,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:13
+        image: postgres:14
         env:
           POSTGRES_USER: 'postgres'
           POSTGRES_HOST_AUTH_METHOD: 'trust'
